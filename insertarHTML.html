@@ -1,8 +1,22 @@
 <html>
   <head>
-    <title></title>
-    <meta content="">
-    <style></style>
+    <title>Insertar HTML</title>
+    <meta content="utf-8">
+    <script language="JavaScript" src="lib/ConstructorXMLHttpRequest.js"></script>
+    <script language="JavaScript" src="lib/ClasePeticionAjax.js"></script>
+    <script language="JavaScript" type="text/javascript">
+    	var PeticionAjax01 = new objetoAjax(); //Definimos un nuevo objetoAjax.
+    	PeticionAjax01.completado = objetoRequestCompletado01; /*Función completado del objetoAjax redefinida. */
+    	function objetoRequestCompletado01(estado, estadoTexto, respuestaTexto, respuestaXML){
+    		document.getElementById('ParteHTML').innerHTML = respuestaTexto; //Sólo nos interesa la respuesta como texto.
+    	}
+    </script>
   </head>
-  <body></body>
+  <body>
+  	<span id="ParteHTML">
+  		<center>
+  		<button onclick="PeticionAjax01.coger('pag01.html')">Coge la pag01</button>
+  		</center>
+	</span>
+  </body>
 </html>
