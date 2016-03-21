@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Insertar una imagen</title>
+		<script language="JavaScript" src="lib/ConstructorXMLHttpRequest.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var PeticionAjax01 = new objetoAjax(); //Definimos un nuevo objetoAjax.
+			PeticionAjax01.completado = objetoRequestCompletado01; //Función completado del objetoAjax redefinida
+			function objetoRequestCompletado01(estado, estadoTexto, respuestaTexto, respuestaXML){
+				document.getElementById('Imagen01').src = respuestaTexto; //Sólo nos interesa la respuesta como texto.
+			}
+		</script>
+	</head>
+	<body>
+		<center><button onclick="PeticionAjax.coger('DireccionImagen01.txt')">Coge la Imagen 01</button></center>
+		<br>
+		<!-- Esta imagen no tiene el campo source -->
+		<center><img id="Imagen01" width="412" height="450" /></center>	
+	</body>
+	</html>

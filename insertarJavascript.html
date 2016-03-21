@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Insertar Javascript</title>
+		<script language="Javascript" src="lib/ConstructorXMLHttpRequest.js"></script>
+		<script language="JavaScript" src="lib/ClasePeticionAjax.js"></script>
+		<script language="Javascript" type="text/javascript">
+			var ClasePeticionAjax01 = new objetoAjax(); //Definimos un nuevo objetoAjax.
+			ClasePeticionAjax01.completado = objetoRequestCompletado01; //Función completado del objetoAjax redefinida.
+			function objetoRequestCompletado01(estado, estadoTexto, respuestaTexto, respuestaXML) {
+				eval(respuestaTexto); //Solo nos interesa la respuesta como texto para lanzar el código JavaScript
+			}
+		</script>
+	</head>
+	<body>
+		<center><button onclick="PeticionAjax01.coger('CodigoJavascript01.txt')">Llama a una Función</button></center>
+	</body>
+</html>
